@@ -1,0 +1,43 @@
+QuickMenu
+=========
+
+QuickMenu was designed to allow a user to quickly create a javascript drop down menu from a
+set of existing links. This menu can then by stylized using CSS.
+
+Tested in IE6 (windows), Firefox 2 and 3 (windows and linux), and Safari (windows).
+
+*** When you install this plugin, make sure to copy the css and js files to the public/stylesheets
+and public/javascripts folders. ***
+
+Example
+=======
+
+Let's say you used to have this in your app/views/people/index.html.erb:
+
+<% for person in @people -%>
+  <%= Person.name %>
+  <%= link_to 'Edit', edit_people_path(person) %>
+  <%= link_to 'Show', people_path(person) %>
+<% end -%>
+
+
+With quick menu, it changes to this:
+
+<% for person in @people -%>
+  <%= person.name %>
+  <% links = [] -%>
+  <% links.push(link_to 'Edit', edit_people_path(person)) %>
+  <% links.push(link_to 'Show', people_path(person)) %>
+  <%= quick_menu(:title => 'Actions', :identifier => person.id.to_s, :links => links) %>
+<% end -%>
+
+Notice that the "=" is removed from the link_to lines because they aren't being rendered, they are
+being added to the links array.
+
+The "identifier" param lets you decide how to identify the span created by quick menu. This is so
+that they have different IDs, so when you hover one menu, they don't all go.
+
+The best part is, look how little editing you have to do for each link! Just remove the = and add
+links.push( ... ). 
+ 
+Copyright (c) 2008 Nick Gauthier (nick@smartlogicsolutions.com), released under the MIT license

@@ -1,0 +1,56 @@
+.quick_menu {
+  float: left;
+  margin: 0;
+  margin-left: 1em;
+  margin-top: 0.25em;
+  padding: 0;
+}
+
+.quick_menu_links {
+  background-color: white;
+  position: absolute;
+  visibility: hidden;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #eee;
+  width: 15em;
+}
+
+.quick_menu_links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.quick_menu_links li {
+  margin: 0;
+  padding: 0;
+  /* IE needs this to be padding-happy, firefox and safari will ignore it as a comment */
+/* \*/ *   border-bottom: 1px solid white; /**/
+}
+
+.quick_menu a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0;
+}
+
+.quick_menu_links a {
+  display: block;
+  padding: 0.5em;
+  margin: 0;
+}
+
+.quick_menu_links a:hover {
+  background-color: #fafafa;
+}
+
+.quick_menu a:active {
+  color: red;
+}
+
+.quick_menu a:visited {
+  color: black;
+}
